@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-plum: #35163F;
+  --color-plum-light: #51265F;
+  --color-plum-dark: #220C2A;
+  --color-lavender: #9B7AE8;
+  --color-lavender-soft: #F0E9FA;
+  --color-ivory: #FAF8F3;
+  --color-charcoal: #242126;
+  --color-muted: #716A75;
+  --color-border-subtle: #E6E0E8;
+  --color-success: #27764B;
+
+  --font-heading: var(--font-playfair), 'Playfair Display', 'DM Serif Display', Georgia, serif;
+  --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  --plum: #35163F;
+  --plum-light: #51265F;
+  --plum-dark: #220C2A;
+  --lavender: #9B7AE8;
+  --lavender-soft: #F0E9FA;
+  --ivory: #FAF8F3;
+  --charcoal: #242126;
+  --muted: #716A75;
+  --border-subtle: #E6E0E8;
+  --success: #27764B;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom editorial typography utility classes */
+.font-heading {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
+}
+
+/* Color utility classes for fallback compatibility */
+.bg-plum { background-color: #35163F; }
+.bg-plum-light { background-color: #51265F; }
+.bg-plum-dark { background-color: #220C2A; }
+.bg-lavender { background-color: #9B7AE8; }
+.bg-lavender-soft { background-color: #F0E9FA; }
+.bg-ivory { background-color: #FAF8F3; }
+.bg-charcoal { background-color: #242126; }
+.bg-border-subtle { background-color: #E6E0E8; }
+
+.text-plum { color: #35163F; }
+.text-plum-light { color: #51265F; }
+.text-lavender { color: #9B7AE8; }
+.text-ivory { color: #FAF8F3; }
+.text-charcoal { color: #242126; }
+.text-muted { color: #716A75; }
+.text-success { color: #27764B; }
+
+.border-plum { border-color: #35163F; }
+.border-lavender { border-color: #9B7AE8; }
+.border-ivory { border-color: #FAF8F3; }
+.border-subtle { border-color: #E6E0E8; }
+
+/* Subtle transitions & smooth scrolling */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scroll indicator bounce */
+@keyframes softBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-soft-bounce {
+  animation: softBounce 2s ease-in-out infinite;
+}
